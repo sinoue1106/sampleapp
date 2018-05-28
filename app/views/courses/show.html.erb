@@ -1,0 +1,39 @@
+<p>
+ delete course
+</p>
+
+<table border="1" cellspacing="0" bordercolor="#000000">
+  <tr>
+    <th>course_id</th>
+    <th><%= @course.course_id %></th>
+  </tr>
+
+  <tr>
+    <th>course_title</th>
+    <th><%= @course.course_title %></th>
+  </tr>
+
+  <tr>
+    <th>topic</th>
+    <th><%= @course.topic %></th>
+  </tr>
+
+  <tr>
+    <th>price</th>
+    <th><%= @course.price %></th>
+  </tr>
+
+  <tr>
+    <th>level_id</th>
+    <th><%= @course.level_id %></th>
+  </tr>
+
+  <tr>
+    <th>category</th>
+    <th><%= @course.category %></th>
+  </tr>
+
+</table>
+
+<%#= button_to 'delete', courses_path(@course), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'delete', courses_path(@course), method: :delete %>

@@ -1,0 +1,16 @@
+class Course < ApplicationRecord
+  validates :course_title, presence: true, format: { with: /\A[a-z0-9]+\z/i }, length: { maximum: 50 }
+  validates :topic, length: { maximum: 100 }
+  validates :price, presence: true, numericality: true, inclusion: { in: 1..999999 }
+  validates :level_id, presence: true, numericality: true, inclusion: { in: 1..5 }
+  validates :category, presence: true, format: { with: /\A[a-z0-9]+\z/i }, length: { maximum: 40 }
+
+  def self.search(search)
+    if search
+      Course.where(['course_title LIKE ?', "%#{search}%"])
+    else
+      Course.all
+    end
+  end
+
+end

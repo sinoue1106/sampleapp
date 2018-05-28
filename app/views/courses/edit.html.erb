@@ -1,0 +1,58 @@
+<h1>single course</h1>
+
+<%= link_to 'delete this courses ? ...', course_path(@course) %>
+<%= form_for :course, url: course_path(@course), method: :patch do |f| %>
+  <% if @course.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@course.errors.count, "error") %> prohibited
+      this course from being saved:</h2>
+    <ul>
+    <% @course.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+<table border="1" cellspacing="0" bordercolor="#000000">
+  <tr>
+    <th><%= f.label :course_id %></th>
+    <th><%= @course.course_id %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :course_title %></th>
+    <th><%= f.text_field :course_title, :size=>"50" %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :topic %></th>
+    <th><%= f.text_field :topic, :size=>"50" %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :day_length %></th>
+    <th><%= f.text_field :day_length, :size=>"50" %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :price %></th>
+    <th><%= f.text_field :price, :size=>"50" %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :level_id %></th>
+    <th><%= f.text_field :level_id, :size=>"50" %></th>
+  </tr>
+
+  <tr>
+    <th><%= f.label :category %></th>
+    <th><%= f.text_field :category, :size=>"50" %></th>
+  </tr>
+
+</table>
+
+  <p>
+    <%= f.submit 'submit' %>
+  </p>
+<% end %>

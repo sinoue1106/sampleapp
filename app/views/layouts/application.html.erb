@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sampleapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <div id="wrapper">
+    <%= render :partial => 'shared/header' %>
+  <div id="contents">
+  <body>
+    <%= yield %>
+  </body>
+  </div>
+    <%= render :partial => 'shared/footer' %>
+  </div>
+</html>

@@ -1,0 +1,21 @@
+
+<h1>Training DB Webapp</h1>
+<%= link_to image_tag('Bartz-Cheer.gif'), controller: 'courses', action: 'new' %>
+<p>Search</p>
+<%= link_to 'all courses', controller: 'courses' %>
+
+<%= form_tag courses_path, :method => 'get' do %>
+  <p>
+    keyword:
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :course_title => nil %>
+  </p>
+<% end %>
+
+<%= form_tag courses_path, :method => 'get' do %>
+  <p>
+    category:
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :category => nil %>
+  </p>
+<% end %>

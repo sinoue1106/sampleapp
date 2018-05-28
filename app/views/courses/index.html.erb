@@ -1,0 +1,24 @@
+
+<h1>List of courses</h1>
+
+<table border="1" cellspacing="0" bordercolor="#000000">
+  <tr>
+    <th>course_id</th>
+    <th>course_title</th>
+    <th>topic</th>
+    <th>price</th>
+    <th>level_id</th>
+    <th>category</th>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to course.course_id, edit_course_path(course) %></td>
+      <td><%= course.course_title %></td>
+      <td><%= course.topic %></td>
+      <td><%= course.price %></td>
+      <td><%= course.level_id %></td>
+      <td><%= course.category %></td>
+    </tr>
+  <% end %>
+</table>
